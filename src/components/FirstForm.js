@@ -6,6 +6,7 @@ const initialValues={
   email: ' ',
   channel: ' ',
 }
+const set=[]
 
 const onSubmit= (values) => {
   console.log('form data', values);
