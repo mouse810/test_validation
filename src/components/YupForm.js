@@ -5,22 +5,32 @@ import * as Yup from 'yup'
 
 const YupForm = () => {
     const initialValues = {
-        name: '',
+        firstName: '',
+        lastName: '',
         email: '',
+        password: '',
+        confirmPassword: '',
         channel: '',
     }
     const validationSchema = Yup.object({
-        name: Yup.string().required('Required'),
+        firstName: Yup.string().required('Required'),
+        lastName: Yup.string().required('Required'),
         email: Yup.string().email('Invalid Email').required('Required'),
+        password: Yup.string().required('Password is required'),
+        confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
         channel: Yup.string().required('Required')
     })
     return (
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={values => { console.log('form data', values) }}>
             <Form>
                 <div>
-                    <label htmlFor='name'>Name</label>
-                    <Field type='text' id='name' name='name' />
-                    <ErrorMessage name='name' />
+                    <label htmlFor='firstName'>First Name</label>
+                    <Field type='text' id='firstName' name='firstName' />
+                    <ErrorMessage name='firstName' />
+                </div><div>
+                    <label htmlFor='lastName'>Last Name</label>
+                    <Field type='text' id='lastName' name='lastName' />
+                    <ErrorMessage name='lastName' />
                 </div>
                 <div>
                     <label htmlFor='email'>E-mail</label>
@@ -28,13 +38,26 @@ const YupForm = () => {
                     <ErrorMessage name='email' />
                 </div>
                 <div>
-                    <label htmlFor='channel'>Channel</label>
-                    <Field type='text' id='channel' name='channel' />
-                    <ErrorMessage name='channel' />
+                    <label htmlFor='password'>Password</label>
+                    <Field type='password' id='password' name='password' />
+                    <ErrorMessage name='password' />
                 </div>
                 <div>
-                    <button type='submit'>Submit</button>
+                    <label htmlFor='confirmPassword'>Confirm Password</label>
+                    <Field type='password' id='confirmPassword' name='confirmPassword' />
+                    <ErrorMessage name='confirmPassword' />
+                </div> <div>
+                    <label htmlFor='channel'>channel</label>
+                    <Field type='string' id='channel' name='channel' />
+                    <ErrorMessage name='channel' />
                 </div>
+
+                <div>
+                    <button type='submit'>SignUp</button>
+                </div>
+                <span className='form-input-login'>
+                    Already have an account? Login <a href='#'>here</a>
+                </span>
 
             </Form>
         </Formik>

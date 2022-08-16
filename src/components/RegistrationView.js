@@ -101,6 +101,9 @@ function RegistrationView() {
             <input placeholder='confirm password' type='password' name='confirmPassword' className='input-field' onChange={(e) => handleChange(e)} value={inputValues.confirmPassword} required />
           </div>
           <button type='submit' id='submit-button'>submit</button>
+          <span className='form-input-login'>
+            Already have an account? Login <a href='#'>here</a>
+          </span>
         </form>
       </div>
     </div>
