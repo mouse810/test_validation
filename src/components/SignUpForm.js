@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup'
+import {Link} from 'react-router-dom'
 
 
 const YupForm = () => {
@@ -10,7 +11,7 @@ const YupForm = () => {
         email: '',
         password: '',
         confirmPassword: '',
-        channel: '',
+        // channel: '',
     }
     const validationSchema = Yup.object({
         firstName: Yup.string().required('Required'),
@@ -18,7 +19,7 @@ const YupForm = () => {
         email: Yup.string().email('Invalid Email').required('Required'),
         password: Yup.string().required('Password is required'),
         confirmPassword: Yup.string().oneOf([Yup.ref('password'), null], 'Passwords must match'),
-        channel: Yup.string().required('Required')
+        // channel: Yup.string().required('Required')
     })
     return (
         <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={values => { console.log('form data', values) }}>
@@ -46,19 +47,19 @@ const YupForm = () => {
                     <label htmlFor='confirmPassword'>Confirm Password</label>
                     <Field type='password' id='confirmPassword' name='confirmPassword' />
                     <ErrorMessage name='confirmPassword' />
-                </div> <div>
+                </div>
+                {/* <div>
                     <label htmlFor='channel'>channel</label>
                     <Field type='string' id='channel' name='channel' />
                     <ErrorMessage name='channel' />
-                </div>
+                </div> */}
 
                 <div>
                     <button type='submit'>SignUp</button>
                 </div>
                 <span className='form-input-login'>
-                    Already have an account? Login <a href='#'>here</a>
+                    Already have an account? Login <Link to='/login'><button>Login</button></Link>
                 </span>
-
             </Form>
         </Formik>
     );

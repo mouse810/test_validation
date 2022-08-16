@@ -1,7 +1,9 @@
 import './App.css';
 // import FirstForm from './components/FirstForm';
 // import RegistrationView from './components/RegistrationView'
-import YupForm from './components/YupForm'
+import SignUpForm from './components/SignUpForm'
+import {Routes, Route} from 'react-router-dom'
+import LoginForm from './components/LoginForm';
 
 function App() {
   return (
@@ -9,7 +11,10 @@ function App() {
       <h3> hello</h3>
       {/* <FirstForm /> */}
       {/* <RegistrationView/> */}
-      <YupForm />
+      <Routes>
+        <Route path='/' element={<SignUpForm />} />
+        <Route path='/login' element={<LoginForm />} />
+      </Routes>
     </div>
   );
 }
