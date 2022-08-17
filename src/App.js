@@ -1,14 +1,13 @@
 import './App.css';
 // import FirstForm from './components/FirstForm';
 // import RegistrationView from './components/RegistrationView'
-import SignUpForm from './components/SignUpForm'
-import {Routes, Route} from 'react-router-dom'
-import LoginForm from './components/LoginForm';
+import SignUpForm from './pages/Reg-Form'
+import LoginForm from './pages/LogIn-Form';
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
   return (
     <div className='App'>
-      <h3> hello</h3>
       {/* <FirstForm /> */}
       {/* <RegistrationView/> */}
       <Routes>

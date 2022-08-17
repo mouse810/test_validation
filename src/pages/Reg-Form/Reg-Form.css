@@ -1,0 +1,69 @@
+.div {
+    background-color: blanchedalmond;
+    width: 60%;
+    height: max-content;
+    margin: auto;
+    padding-bottom: 150px;
+    border-radius: 10px;
+}
+
+h1 {
+    color: red;
+    padding-top: 2%;
+}
+
+.form {
+    color: rgb(76, 72, 66);
+    padding-top: 2%;
+}
+
+.form-div {
+    margin-left: 270px;
+    border-radius: 10px;
+    border: 1px solid blue;
+    width: max-content;
+}
+
+.containers {
+    margin: 10px;
+    display: flex;
+    justify-content: center;
+    letter-spacing: 5px;
+    align-items: center;
+}
+
+.containers-field {
+    flex-direction: column;
+
+}
+
+.btn {
+    margin-left: 250px;
+}
+
+.label {
+    width: 250px;
+}
+
+label {
+    margin-right: 20px;
+    color: indigo;
+    font-weight: bold;
+}
+
+button {
+    height: 40px;
+    width: 150px;
+    margin: 16px;
+    color: whitesmoke;
+    background-color: black;
+    border-radius: 7px;
+}
+
+.form-control {
+    width: 350px;
+    height: 35px;
+    border: 2px solid olive;
+    border-radius: 5px;
+    font-size: x-large;
+}
