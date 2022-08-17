@@ -67,3 +67,6 @@ button {
     border-radius: 5px;
     font-size: x-large;
 }
+.ErrorMess{
+    color: red;
+}

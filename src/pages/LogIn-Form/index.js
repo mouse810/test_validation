@@ -25,7 +25,8 @@ const LoginForm = () => {
                             </div>
                             <div className='containers-field'>
                                 <Field className='form-control' text='email' id='email' name='email' /><br />
-                                <ErrorMessage name='email' /></div>
+                                <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='email' /></small>
+                            </div>
                         </div>
                         <div className='containers'>
                             <div className='label'>
@@ -33,7 +34,7 @@ const LoginForm = () => {
                             </div>
                             <div className='containers-field'>
                                 <Field className='form-control' text='password' id='password' name='password' /><br />
-                                <ErrorMessage name='password' />
+                               <span className='ErrorMess'> <ErrorMessage  name='password' /></span>
                             </div>
                         </div>
                         <div className='containers btn'>

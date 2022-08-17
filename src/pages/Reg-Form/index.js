@@ -32,58 +32,57 @@ const YupForm = () => {
                             <div className='label'> <label htmlFor='firstName'>First Name</label></div>
                             <div className='containers-field'>
                                 <Field className='form-control' type='text' id='firstName' name='firstName' /><br />
-                                <ErrorMessage name='firstName' />
+                                <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='firstName' /></small>
                             </div>
                         </div>
                         <div className='containers'>
                             <div className='label'> <label htmlFor='lastName'>Last Name</label></div>
                             <div className='containers-field'>
                                 <Field className='form-control' type='text' id='lastName' name='lastName' /><br />
-                                <ErrorMessage name='lastName' /></div>
+                                <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='lastName' /></small>
+                            </div>
                         </div>
                         <div className='containers'>
                             <div className='label'> <label htmlFor='email'>E-mail</label></div>
                             <div className='containers-field'>
-
                                 <Field className='form-control' type='email' id='email' name='email' /><br />
-                                <ErrorMessage name='email' />
+                                <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='email' /></small>
                             </div>
                         </div>
                         <div className='containers'>
                             <div className='label'> <label htmlFor='password'>Password</label></div>
                             <div className='containers-field'>
-
                                 <Field className='form-control' type='password' id='password' name='password' /><br />
-                                <ErrorMessage name='password' />
+                                <small className='ErrorMess'> <ErrorMessage name='password' /></small>
+
                             </div>
                         </div>
                         <div className='containers'>
                             <div className='label'><label htmlFor='confirmPassword'>Confirm Password</label></div>
                             <div className='containers-field'>
-
                                 <Field className='form-control' type='password' id='confirmPassword' name='confirmPassword' /><br />
-                                <ErrorMessage name='confirmPassword' /></div>
-
+                                <small className='ErrorMess'><ErrorMessage className='ErrorMess' name='confirmPassword' /></small>
                         </div>
-                        {/* <div className='containers'>
+                    </div>
+                    {/* <div className='containers'>
                               <div className='label'> 
                                <label htmlFor='channel'>channel</label></div> 
                             <div className='containers-field'>
                            <Field typ className='form-control'e='string' id='channel' name='channel' /><br />
-                         <ErrorMessage name='channel' />
+                        <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='channel' /></small>
                     </div>
                      </div> */}
 
-                        <div className='containers btn'>
-                            <button type='submit'>SignUp</button>
-                        </div>
+                    <div className='containers btn'>
+                        <button type='submit'>SignUp</button>
                     </div>
-                    <span className='form-input-login'>
-                        Already have an account? Login <Link to='/login'><button>Login</button></Link>
-                    </span>
-                </Form>
-            </Formik>
-        </div>
+                </div>
+                <span className='form-input-login'>
+                    Already have an account? Login <Link to='/login'><button>Login</button></Link>
+                </span>
+            </Form>
+        </Formik>
+        </div >
     );
 };
 
