@@ -1,24 +1,21 @@
 .div {
     background-color: blanchedalmond;
-    width: 60%;
+    width: max-content;
     height: max-content;
     margin: auto;
-    padding-bottom: 150px;
+    /* padding: 50px; */
     border-radius: 10px;
 }
 
 h1 {
     color: red;
-    padding-top: 2%;
 }
 
 .form {
     color: rgb(76, 72, 66);
-    padding-top: 2%;
 }
 
 .form-div {
-    margin-left: 270px;
     border-radius: 10px;
     border: 1px solid blue;
     width: max-content;
@@ -34,7 +31,6 @@ h1 {
 
 .containers-field {
     flex-direction: column;
-
 }
 
 .btn {
@@ -67,6 +63,7 @@ button {
     border-radius: 5px;
     font-size: x-large;
 }
-.ErrorMess{
+
+.ErrorMess {
     color: red;
 }

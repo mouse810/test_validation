@@ -3,7 +3,7 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup'
 import { Link } from 'react-router-dom'
 import './Reg-Form.css'
-
+import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
 const YupForm = () => {
     const initialValues = {
@@ -13,6 +13,23 @@ const YupForm = () => {
         password: '',
         confirmPassword: '',
         // channel: '',
+    }
+    const handleSubmit = (e) => {
+        console.log(e, "hello");
+        const auth = getAuth();
+        createUserWithEmailAndPassword(auth, e.email, e.password)
+            .then((response) => {
+                const uid = response.user.uid;
+                console.log(uid);
+
+
+                alert("success")
+                return response.user.uid
+            })
+            .catch((error) => {
+               alert(error)
+                // ..
+            });
     }
     const validationSchema = Yup.object({
         firstName: Yup.string().required('Required'),
@@ -25,7 +42,7 @@ const YupForm = () => {
     return (
         <div className='div'>
             <h1 >Registration Form</h1>
-            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={values => { console.log('form data', values) }}>
+            <Formik initialValues={initialValues} validationSchema={validationSchema} onSubmit={handleSubmit}>
                 <Form className='form'>
                     <div className='form-div'>
                         <div className='containers'>
@@ -62,26 +79,26 @@ const YupForm = () => {
                             <div className='containers-field'>
                                 <Field className='form-control' type='password' id='confirmPassword' name='confirmPassword' /><br />
                                 <small className='ErrorMess'><ErrorMessage className='ErrorMess' name='confirmPassword' /></small>
+                            </div>
                         </div>
-                    </div>
-                    {/* <div className='containers'>
+                        {/* <div className='containers'>
                               <div className='label'> 
                                <label htmlFor='channel'>channel</label></div> 
                             <div className='containers-field'>
                            <Field typ className='form-control'e='string' id='channel' name='channel' /><br />
                         <small className='ErrorMess'> <ErrorMessage className='ErrorMess' name='channel' /></small>
-                    </div>
-                     </div> */}
+                        </div>
+                        </div> */}
 
-                    <div className='containers btn'>
-                        <button type='submit'>SignUp</button>
+                        <div className='containers btn'>
+                            <button type='submit'>SignUp</button>
+                        </div>
                     </div>
-                </div>
-                <span className='form-input-login'>
-                    Already have an account? Login <Link to='/login'><button>Login</button></Link>
-                </span>
-            </Form>
-        </Formik>
+                    <span className='form-input-login'>
+                        Already have an account? Login <Link to='/login'><button>Login</button></Link>
+                    </span>
+                </Form>
+            </Formik>
         </div >
     );
 };
